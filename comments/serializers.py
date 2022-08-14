@@ -20,3 +20,6 @@ class CommentSerializer(serializers.ModelSerializer):
             'content',
         ]
 
+
+class CommentDetailSerializer(CommentSerializer):
+    post = serializers.ReadOnlyField(source='post.id')
